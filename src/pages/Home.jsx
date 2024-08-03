@@ -1,15 +1,28 @@
 import React from 'react'
-import Sidebar from '../components/layers/Sidebar'   
+import Navbar from '../components/Navbar/Navbar'
+import Chart1 from '../components/charts/Chart1'
+import Container from '../components/layers/Container'
+
+
 
 const Home = () => {
-  return (
-    <div className='flex'>
-            <Sidebar />
 
-      
-      <div className='flex flex-col'>
-      <div className='text-2xl font-semibold p-7 '>Home Page</div>
+
+  return (
+    <div className='w-full'>
+      <Navbar />
+      <div className='px-4 lg:px-6'>
+        <div className="top">
+
+        </div>
+
+        <div className="chart1">
+          <Container>
+            <Chart1 />
+          </Container>
+        </div>
       </div>
+
     </div>
   )
 }
