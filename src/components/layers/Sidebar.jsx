@@ -10,10 +10,6 @@ import { FaChartBar } from "react-icons/fa";
 import { MdOutlineTableChart } from "react-icons/md";
 import { FaHashtag } from "react-icons/fa";
 
-
-
-
-
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -51,11 +47,11 @@ const Sidebar = () => {
     { title: "Documentation", spacing: true, icon: <FaHashtag /> },
   ];
   return (
-
+// bg #081A51, #6610f2, 
     <>
-      <div className={`bg-[#081A51] h-screen p-5 pt-8 w-72 relative ${open ? "w-[288px]" : "w-[80px]"} duration-300 `}>
+      <div className={`bg-[#FFF] h-screen p-5 pt-8 w-72 relative ${open ? "w-[288px]" : "w-[80px]"} duration-300 shadow-md`}>
         <BsArrowLeftShort className=
-          {`bg-white text-[#081A51] text-3xl rounded-full absolute -right-3 top-9 border border-[#081A51] cursor-pointer ${!open && "rotate-180"}`}
+          {`bg-white text-[#081A51] text-3xl rounded-full absolute -right-3 top-[50px] border border-[#081A51] cursor-pointer shadow-md ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
 
@@ -64,18 +60,18 @@ const Sidebar = () => {
           <h1 className={`text-white origin-left font-medium text-2xl ${!open && "scale-0"} duration-300`}>Admin</h1>
         </div>
 
-        <div className={`flex items-center rounded-md bg-[rgba(255,255,255,0.18)]
-           mt-6 px-4 py-2 ${!open ? "px-[10px]" : "px-[20px]"}`}>
-          <BsSearch className={`text-white text-lg block float-left cursor-pointer ${open && "mr-2"}`} />
+        <div className={`flex items-center rounded-md bg-[rgba(255,255,255,0.18)] 
+           mt-6 px-4 py-2 ${!open ? "px-[10px]" : "px-[20px] border"}`}>
+          <BsSearch className={`text-[#0c0c0c] hover:text-[#6610f2] text-lg block float-left cursor-pointer ${open && "mr-2 "}`} />
 
-          <input type="search" placeholder='Search' className={`text-base bg-transparent w-full text-white focus:outline-none ${!open && "hidden"}`} />
+          <input type="search" placeholder='Search' className={`text-base bg-transparent w-full text-[#0c0c0c] focus:outline-none ${!open && "hidden"}`} />
         </div>
 
         <div className='pt-2'>
           <ul>
             {Menus.map((menu, index) => (
               <>
-                <li key={index} className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.18)]
+                <li key={index} className={`text-[#0c0c0c] hover:text-[#6610f2] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.18)]
                 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
                   <span className='text-2xl block float-left'>
                     {menu.icon? menu.icon : <FiBox />}
@@ -96,7 +92,7 @@ const Sidebar = () => {
 
                         <>
                         <li key={index} 
-                        className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.18)]
+                        className={`text-[#0c0c0c] hover:text-[#6610f2] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.18)]
                           rounded-md px-5`}
                         >
                           {submenuItems.title}
